@@ -10,4 +10,9 @@ public class BaseMathTest {
 	public void testAddPositive() {
 		assertEquals(5, BaseMath.add(2, 3));
 	}
+
+	@Test
+	public void testAddNegative() {
+		assertEquals(-6, BaseMath.add(-2, -3));
+	}
 }
