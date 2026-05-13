@@ -16,13 +16,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
 
         stage('Unit Tests + Coverage') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
             post {
                 always {
@@ -42,7 +42,7 @@ pipeline {
 
         stage('Checkstyle') {
             steps {
-                sh 'mvn checkstyle:checkstyle'
+                bat 'mvn checkstyle:checkstyle'
             }
             post {
                 always {
@@ -58,7 +58,7 @@ pipeline {
 
         stage('Archive') {
             steps {
-                sh 'mvn package -DskipTests'
+                bat 'mvn package -DskipTests'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
