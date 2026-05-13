@@ -13,6 +13,6 @@ public class BaseMathTest {
 
 	@Test
 	public void testAddNegative() {
-		assertEquals(-6, BaseMath.add(-2, -3));
+		assertEquals(-5, BaseMath.add(-2, -3));
 	}
 }
